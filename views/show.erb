@@ -1,0 +1,8 @@
+<h1><%= @station.stationName %></h1>
+<ul>
+  <% Station.properties.each do |property| %>
+    <% if @station.send(property.name) != "" %>
+      <li><%= property.name %>: <%= @station.send(property.name) %></li>
+    <% end %>
+  <% end %>
+</ul>

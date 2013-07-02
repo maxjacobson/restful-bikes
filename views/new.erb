@@ -1,0 +1,10 @@
+<h1>New Station</h1>
+
+<form action="/stations" method="POST">
+  <% Station.properties.reject{|p| p.name == :id}.each do |property| %>
+    <label><%= property.name %>: </label>
+    <input type="text" name="<%= property.name %>"><br>
+  <% end %>
+  <input type="submit">
+</form>
+
